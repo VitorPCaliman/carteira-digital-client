@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+    <main class="container mx-auto px-4 pt-20">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">Sua Carteira Digital</h1>
+      
+      @if (usuario) {
+        <app-user-card [usuario]="usuario" />
+      }
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <button
+          (click)="showTransferenciaForm()"
+          class="p-4 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          Agendar Transferência
+        </button>
+        <button
+          (click)="showExtrato()"
+          class="p-4 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        >
+          Consultar Extrato
+        </button>
+      </div>
+
+      @if (showingTransferenciaForm) {
+        <app-transferencia-form
+          [contaOrigem]="usuario?.contaOrigem || ''"
+          (onTransferencia)="agendarTransferencia($event)"
+        />
+      }
+
+      @if (showingExtrato) {
+        <app-extrato-list [transferencias]="transferencias" />
+      }
+    </main>

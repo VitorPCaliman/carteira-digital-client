@@ -21,4 +21,10 @@ export class AuthGuardService implements CanActivate {
       return false;
     }
   }
+
+  logout() {
+    localStorage.removeItem("auth-token");
+    localStorage.removeItem('auth-name');
+    this.router.navigate([""]);
+  }
 }

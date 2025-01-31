@@ -49,8 +49,11 @@ export class SignUpComponent {
 
   submit(){
     this.loginService.signup(this.signupForm.value.nome, this.signupForm.value.cpf, this.signupForm.value.contaOrigem,  this.signupForm.value.email, this.signupForm.value.senha).subscribe({
-      next: () => this.toastService.success("Login feito com sucesso!"),
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
+      next: () => {
+        this.toastService.success("Conta criada com sucesso!");
+        this.router.navigate(["home"]);
+      },
+      error: () => this.toastService.error("Não foi possivel criar conta! Tente novamente mais tarde")
     })
   }
 
