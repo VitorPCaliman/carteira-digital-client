@@ -1,0 +1,29 @@
+<app-default-login-layout
+    title="Entre com sua conta"
+    primaryBtnText="Entrar"
+    secondaryBtnText="Criar conta"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+>
+    <form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="senha"
+            inputName="senha"
+            type="password"
+            label="Sua senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <span>Esqueceu sua senha?</span>
+    </form>
+</app-default-login-layout>

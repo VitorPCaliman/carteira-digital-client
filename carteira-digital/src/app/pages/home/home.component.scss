@@ -1,0 +1,12 @@
+@import '../../../app/styles/variables.scss';
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.main{
+    h1{
+        color:  $primary-color;
+    }
+}

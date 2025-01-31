@@ -1,0 +1,28 @@
+<div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+    <div class="space-y-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-800">Dados do Usuário</h2>
+        <span class="text-sm text-gray-500">ID: {{usuario?.id}}</span>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm text-gray-500">Nome</p>
+          <p class="text-lg font-medium">{{usuario?.nome}}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">CPF</p>
+          <p class="text-lg font-medium">{{usuario?.cpf}}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Conta</p>
+          <p class="text-lg font-medium">{{usuario?.contaOrigem}}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Saldo</p>
+          <p class="text-lg font-medium text-green-600">
+            R$ {{usuario?.saldo}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
