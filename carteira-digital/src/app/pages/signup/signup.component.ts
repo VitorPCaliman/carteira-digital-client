@@ -53,8 +53,14 @@ export class SignUpComponent {
         this.toastService.success("Conta criada com sucesso!");
         this.router.navigate(["home"]);
       },
-      error: () => this.toastService.error("Não foi possivel criar conta! Tente novamente mais tarde")
-    })
+      error: (err) => {
+        if (err.status === 400) {
+          this.toastService.error(err.error);
+        } else {
+          this.toastService.error("Não foi possível criar a conta! Tente novamente mais tarde");
+        }
+      }
+    });
   }
 
   navigate(){

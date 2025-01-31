@@ -45,8 +45,14 @@ export class LoginComponent {
         this.toastService.success("Login feito com sucesso!");
         this.router.navigate(["home"]);
       },
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
-    })
+      error: (err) => {
+        if (err.status === 400) {
+          this.toastService.error(err.error);
+        } else {
+          this.toastService.error("Não foi possível fazer login! Tente novamente mais tarde");
+        }
+      }
+    });
   }
 
   navigate(){

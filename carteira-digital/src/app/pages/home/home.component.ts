@@ -66,6 +66,14 @@ export class HomeComponent {
       response => {
         this.showingTransferenciaForm = false;
         this.toastService.success("Transferência agendada com sucesso!");
+        this.ngOnInit();
+      },
+      error => {
+        if (error.status === 400) {
+          this.toastService.error(error.error.error);
+        } else {
+          this.toastService.error("Erro inesperado! Tente novamente mais tarde.");
+        }
       }
     );
   }
