@@ -1,4 +1,4 @@
-# 🏦 CLIENT de Carteira Digital
+# 🏦 FRONT de Carteira Digital
 
 Esta é a estrutura do Frontend para a aplicação de Carteira Digital, responsável por gerenciar transferências financeiras e autenticação de usuários. A aplicação oferece funcionalidades como cálculo de taxas com base em datas de agendamento, autenticação com JWT, e operações CRUD para transferências e usuários.
 
